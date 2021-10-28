@@ -37,7 +37,11 @@
 		<c:when test="${empty sessionScope.session_user }">
 			<a href="<c:url value='/jsps/user/login.jsp'/>" target="_parent">Login</a> |&nbsp; 
 			<a href="<c:url value='/jsps/user/regist.jsp'/>" target="_parent">Register</a> |&nbsp; 
-	
+			<a href="<c:url value='/jsps/entity1/entity1create.jsp'/>" target="_parent">Create Entity1</a> |&nbsp; 
+			<a href="<c:url value='/jsps/entity1/entity1read.jsp'/>" target="_parent">Read Entity1</a> |&nbsp;
+			<a href="<c:url value='/jsps/entity1/entity1update.jsp'/>" target="_parent">Update Entity1</a> |&nbsp;	 
+			<a href="<c:url value='/jsps/entity1/entity1delete.jsp'/>" target="_parent">Delete Entity1</a>	
+			
 		</c:when>
 		<c:otherwise>
 			Hello：${sessionScope.session_user.username };
