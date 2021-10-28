@@ -7,7 +7,7 @@
   <head>
     <base href="">
     
-    <title>body</title>
+    <title>body A</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -22,8 +22,7 @@
   </head>
   
   <body>
-    <h1>In a recent Millennial Survey by Deloitte, 60% of the companies who build sustainable products prefer to hire candidates who care about sustainability and corporate social responsibility over the skills they hold. Hence it is the need of the hour to develop a career portal to connect recruiters from organisations that prioritieses sustainability with like minded job applicants. The data that will be be stored in the the database is the job seekers data,the postings of job that are available,status of the applications, the credentials of the recreuiter who is hiring. Companies that are looking to hire applicants who share the same. 
-The uniqueness of this system is that it is dedicated to the sector which looks to engage in sustainable development. This system provides a platform to connect applicants and companies who are passionate about progressing in the sustainability realm.</h1>
+    <h1>HAVE A NICE WEEKEND</h1>
     
   </body>
 </html>

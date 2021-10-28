@@ -9,10 +9,12 @@ public class Entity1Exception extends Exception {
 
 	public Entity1Exception() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public Entity1Exception(String message) {
 		super(message);
+		// TODO Auto-generated constructor stub
 	}
 
 }

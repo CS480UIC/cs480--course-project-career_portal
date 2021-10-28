@@ -18,6 +18,7 @@ public class findAll extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doPost(request,response);
 	}
 
@@ -25,11 +26,13 @@ public class findAll extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		UserService userservice = new UserService();
 		try {
 			request.setAttribute("UserList", userservice.findall());
 		} catch (InstantiationException | IllegalAccessException
 				| ClassNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
@@ -40,11 +43,12 @@ public class findAll extends HttpServlet {
 			
 		} catch (InstantiationException | IllegalAccessException
 				| ClassNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		
-		request.getRequestDispatcher("/jsps/user/q1_list_users.jsp").forward(request, response);
+		request.getRequestDispatcher("/jsps/Queryresult/list.jsp").forward(request, response);
 	}
 
 }

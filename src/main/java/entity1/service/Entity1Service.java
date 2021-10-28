@@ -20,8 +20,9 @@ public class Entity1Service {
 	 * @throws InstantiationException 
 	 */
 	public void create(Entity1 form) throws Entity1Exception, ClassNotFoundException, InstantiationException, IllegalAccessException{
+		
 		// check the primary key of Entity1
-		Entity1 entity1 = entity1Dao.findByUsername(form.getUsername());
+		Entity1 entity1 = Entity1Dao.findByUsername(form.getUsername());
 		if(entity1.getUsername()!=null && entity1.getUsername().equals(form.getUsername())) throw new Entity1Exception("This user name has been registered!");
 		entity1Dao.add(form);
 	}
@@ -35,7 +36,7 @@ public class Entity1Service {
 	 * @throws InstantiationException 
 	 */
 	public void login(Entity1 form) throws Entity1Exception, ClassNotFoundException, InstantiationException, IllegalAccessException {
-		Entity1 user = entity1Dao.findByUsername(form.getUsername());
+		Entity1 user = Entity1Dao.findByUsername(form.getUsername());
 		if(user.getUsername()==null) throw new Entity1Exception("The user is not in the database");
 		
 		String password = user.getPassword();

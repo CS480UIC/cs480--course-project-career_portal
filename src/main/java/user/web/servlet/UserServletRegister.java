@@ -27,6 +27,7 @@ public class UserServletRegister extends HttpServlet {
      */
     public UserServletRegister() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -40,28 +41,35 @@ public class UserServletRegister extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//Map<String, String> form = new HashMap<String,String>();
 		UserService userservice = new UserService();
 		Map<String,String[]> paramMap = request.getParameterMap();
 		User form = new User();
 		List<String> info = new ArrayList<String>();
 		
 		for(String name : paramMap.keySet()) {
+			
 			String[] values = paramMap.get(name);
 			info.add(values[0]);
+			System.out.println(name + ": " + Arrays.toString(values));
+
 		}
-		
 		form.setUsername(info.get(1));
 		form.setPassword(info.get(2));
 		form.setEmail(info.get(3));
 		
 		try {
 			userservice.regist(form);
+			
 			response.sendRedirect( request.getContextPath() + "/jsps/user/login.jsp");
 		} catch (ClassNotFoundException | UserException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 		

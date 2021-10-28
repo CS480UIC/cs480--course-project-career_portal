@@ -28,6 +28,7 @@ public class Entity1ServletCreate extends HttpServlet {
      */
     public Entity1ServletCreate() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -45,24 +46,41 @@ public class Entity1ServletCreate extends HttpServlet {
 		Map<String,String[]> paramMap = request.getParameterMap();
 		Entity1 form = new Entity1();
 		List<String> info = new ArrayList<String>();
-
+		System.out.println(form);
 		for(String name : paramMap.keySet()) {
+			
 			String[] values = paramMap.get(name);
 			info.add(values[0]);
+			System.out.println(name + ": " + Arrays.toString(values));
+			System.out.println(info.add(values[0]));
+
 		}
-		form.setUsername(info.get(0));
-		form.setPassword(info.get(1));
-		form.setEmail(info.get(2));		
+//		System.out.println("1");
+//		System.out.println(info);
+
+		form.setUsername(info.get(1));
+//		System.out.println("1");
+
+		form.setPassword(info.get(2));
+//		System.out.println("2");
+
+		form.setEmail(info.get(3));		
+//		System.out.println("3");
+		
 		
 		try {
+			System.out.println("3");
 			entity1service.create(form);
 			response.sendRedirect( request.getContextPath() + "/jsps/main.jsp");
 			
 		} catch (ClassNotFoundException | Entity1Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 		

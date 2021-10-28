@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import entity1.dao.Entity1Dao;
 import entity1.domain.Entity1;
+//import entity1.service.Entity1Service;
 
 
 /**
@@ -24,6 +25,7 @@ public class Entity1ServletRead extends HttpServlet {
      */
     public Entity1ServletRead() {
         super();
+        // TODO Auto-generated constructor stub
     }
     
 	/**
@@ -38,10 +40,8 @@ public class Entity1ServletRead extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Entity1 entity1 = null;
-		Entity1Dao entity1Dao = new Entity1Dao();
-		
 		try {
-			entity1 = entity1Dao.findByUsername(request.getParameter("username"));
+			entity1 = Entity1Dao.findByUsername(request.getParameter("username"));
 		} catch (ClassNotFoundException e1) {
 			e1.printStackTrace();
 		} catch (InstantiationException e1) {
@@ -54,6 +54,7 @@ public class Entity1ServletRead extends HttpServlet {
 					System.out.println(entity1);
 					request.setAttribute("entity1", entity1);
 					request.getRequestDispatcher("/jsps/entity1/entity1_read_output.jsp").forward(request, response);
+				
 			}
 			else{
 			request.setAttribute("msg", "Entity not found");
