@@ -24,3 +24,11 @@ A career portal to help companies hire employees for sustainable job roles.
 ![Alt text](/documentation/Screenshots/Employer/delete.png?raw=true)
 ![Alt text](/documentation/Screenshots/Employer/read.png?raw=true)
 ![Alt text](/documentation/Screenshots/Employer/update.png?raw=true)
+
+
+## CRUD for Candidate
+
+![Alt text](/documentation/Screenshots/candidate/create.png?raw=true)
+![Alt text](/documentation/Screenshots/candidate/delete.png?raw=true)
+![Alt text](/documentation/Screenshots/candidate/read.png?raw=true)
+![Alt text](/documentation/Screenshots/candidate/update.png?raw=true)
