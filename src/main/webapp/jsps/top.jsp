@@ -31,26 +31,26 @@
   </head>
   
   <body>
-<h1 style="text-align: center;">HI CLASS OF CS 480</h1>
+<h1 style="text-align: center;">Career Portal</h1>
 <div style="font-size: 10pt;">
 	<c:choose>
 		<c:when test="${empty sessionScope.session_user }">
 			<a href="<c:url value='/jsps/user/login.jsp'/>" target="_parent">Login</a> |&nbsp; 
 			<a href="<c:url value='/jsps/user/regist.jsp'/>" target="_parent">Register</a> |&nbsp; 
-			<a href="<c:url value='/jsps/entity1/entity1create.jsp'/>" target="_parent">Create Entity1</a> |&nbsp; 
-			<a href="<c:url value='/jsps/entity1/entity1read.jsp'/>" target="_parent">Read Entity1</a> |&nbsp;
-			<a href="<c:url value='/jsps/entity1/entity1update.jsp'/>" target="_parent">Update Entity1</a> |&nbsp;	 
-			<a href="<c:url value='/jsps/entity1/entity1delete.jsp'/>" target="_parent">Delete Entity1</a>	
+			<a href="<c:url value='/jsps/employer/employercreate.jsp'/>" target="_parent">Create Employer</a> |&nbsp; 
+			<a href="<c:url value='/jsps/employer/employerread.jsp'/>" target="_parent">Read Employer</a> |&nbsp;
+			<a href="<c:url value='/jsps/employer/employerupdate.jsp'/>" target="_parent">Update Employer</a> |&nbsp;	 
+			<a href="<c:url value='/jsps/employer/employerdelete.jsp'/>" target="_parent">Delete Employer</a>	
 			
 		</c:when>
 		<c:otherwise>
 			Hello：${sessionScope.session_user.username };
 			<a href="<c:url value='/jsps/item.jsp'/>" target="body">Query Result</a> |&nbsp;&nbsp;
 			<a href="<c:url value='/UserServletLogout'/>" target="_parent">Logout</a> |&nbsp; 
-			<a href="<c:url value='/jsps/entity1/entity1create.jsp'/>" target="_parent">Create Entity1</a> |&nbsp; 
-			<a href="<c:url value='/jsps/entity1/entity1read.jsp'/>" target="_parent">Read Entity1</a> |&nbsp;
-			<a href="<c:url value='/jsps/entity1/entity1update.jsp'/>" target="_parent">Update Entity1</a> |&nbsp;	 
-			<a href="<c:url value='/jsps/entity1/entity1delete.jsp'/>" target="_parent">Delete Entity1</a>	
+			<a href="<c:url value='/jsps/employer/employercreate.jsp'/>" target="_parent">Create Employer</a> |&nbsp; 
+			<a href="<c:url value='/jsps/employer/employerread.jsp'/>" target="_parent">Read Employer</a> |&nbsp;
+			<a href="<c:url value='/jsps/employer/employerupdate.jsp'/>" target="_parent">Update Employer</a> |&nbsp;	 
+			<a href="<c:url value='/jsps/employer/employerdelete.jsp'/>" target="_parent">Delete Employer</a>	
 
 		</c:otherwise>
 	</c:choose>
