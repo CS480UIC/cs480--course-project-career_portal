@@ -44,6 +44,7 @@
 	sustainability_interest ：<input type="text" name="sustainability_interest" value="${form.sustainability_interest }"/>
 	<span style="color: red; font-weight: 900">${errors.sustainability_interest }</span>
 	<br/>
+	<input type="submit" value="Create Employer"/>
 </form>
   </body>
 </html>
