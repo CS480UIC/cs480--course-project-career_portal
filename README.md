@@ -8,7 +8,7 @@
 career_portal 
 
 # Author(s)
-Diana Roy Elizabeth
+Diana Elizabeth Roy
 Priyanka Ragavendra
 Karthik Hosur 
 
