@@ -9,7 +9,7 @@ career_portal
 
 # Author(s)
 Diana Elizabeth Roy
-Priyanka Ragavendra
+Priyanka Raghavendra
 Karthik Hosur 
 
 # Database description
