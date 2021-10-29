@@ -22,7 +22,7 @@
   </head>
   
   <body>
-    <h1>HAVE A NICE WEEKEND</h1>
+    <h1>Career Portal to find Sustainable Jobs</h1>
     
   </body>
 </html>
