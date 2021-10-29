@@ -14,3 +14,13 @@ Karthik Hosur
 
 # Database description
 A career portal to help companies hire employees for sustainable job roles. 
+
+## Screenshots:
+
+## CRUD for Employer
+
+![Alt text](/documentation/Screenshots/homepage.png?raw=true)
+![Alt text](/documentation/Screenshots/Employer/create.png?raw=true)
+![Alt text](/documentation/Screenshots/Employer/delete.png?raw=true)
+![Alt text](/documentation/Screenshots/Employer/read.png?raw=true)
+![Alt text](/documentation/Screenshots/Employer/update.png?raw=true)
