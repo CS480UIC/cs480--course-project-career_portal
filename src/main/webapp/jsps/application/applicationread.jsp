@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Read Entity1</title>
+    <title>Read Application</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,12 +21,12 @@
   </head>
   
   <body>
-  <h1>Read Entity1</h1>
+  <h1>Read Application</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/Entity1ServletRead'/>" method="post">
 	<input type="hidden" name="method" value="regist"/>
-	User    :<input type="text" name="username" value="${form.username }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
+	application_id    :<input type="text" name="application_id" value="${form.application_id }"/>
+	<span style="color: red; font-weight: 900">${errors.application_id }</span>
 	<br/>
 <%-- 	Password：<input type="password" name="password" value="${form.password }"/>
 	<span style="color: red; font-weight: 900">${errors.password }</span>
