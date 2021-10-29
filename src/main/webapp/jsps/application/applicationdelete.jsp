@@ -27,7 +27,7 @@
 	application_id   :<input type="text" name="application_id" value="${form.application_id }"/>
 	<span style="color: red; font-weight: 900">${errors.application_id }</span>
 	<br/>
-	<input type="submit" value="Delete Entity1"/>
+	<input type="submit" value="Delete Application"/>
 </form>
   </body>
 </html>
