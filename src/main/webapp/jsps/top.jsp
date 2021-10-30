@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
@@ -41,7 +42,14 @@
 			<a href="<c:url value='/jsps/employer/employerread.jsp'/>" target="_parent">Read Employer</a> |&nbsp;
 			<a href="<c:url value='/jsps/employer/employerupdate.jsp'/>" target="_parent">Update Employer</a> |&nbsp;	 
 			<a href="<c:url value='/jsps/employer/employerdelete.jsp'/>" target="_parent">Delete Employer</a>	
-			
+			<a href="<c:url value='/jsps/candidate/candidatecreate.jsp'/>" target="_parent">Create Candidate</a> |&nbsp; 
+			<a href="<c:url value='/jsps/candidate/candidateread.jsp'/>" target="_parent">Read Candidate</a> |&nbsp;
+			<a href="<c:url value='/jsps/candidate/candidateupdate.jsp'/>" target="_parent">Update Candidate</a> |&nbsp;	 
+			<a href="<c:url value='/jsps/candidate/candidatedelete.jsp'/>" target="_parent">Delete Candidate</a>	
+			<a href="<c:url value='/jsps/job_posting/job_posting_create.jsp'/>" target="_parent">Create Job Posting</a> |&nbsp; 
+			<a href="<c:url value='/jsps/job_posting/job_postingread.jsp'/>" target="_parent">Read Job Posting</a> |&nbsp;
+			<a href="<c:url value='/jsps/job_posting/job_postingupdate.jsp'/>" target="_parent">Update Job Posting</a> |&nbsp;	 
+			<a href="<c:url value='/jsps/job_posting/job_postingdelete.jsp'/>" target="_parent">Delete  Job Posting</a>	
 		</c:when>
 		<c:otherwise>
 			Hello：${sessionScope.session_user.username };
