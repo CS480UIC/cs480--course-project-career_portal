@@ -227,7 +227,7 @@ Attribute Name: posting_date
 Type: DATE  
 Description: Date at which the review was posted
 
-Attribute Name:job_review
+Attribute Name:review
 Type: VARCHAR  
 Description: Review of the interview is posted by the candidate 
 
