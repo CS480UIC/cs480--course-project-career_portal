@@ -130,7 +130,7 @@ candidate_id(FK) ->review_id on delete cascade
 candidate_id(FK) ->applicant_id on delete cascade
 
 ## Implementing attribute types
-# EMPLOYER
+# employer
 Attribute Name: employer_id
 Type: INTEGER 
 Description: Stores a unique ID for each comapany
@@ -159,7 +159,7 @@ Attribute Name: sustainability_interest
 Type: VARCHAR  
 Description: The type of sustainability that the employer supports and related job prospects
 
-# DOMAIN
+# domain
 Attribute Name: domain_id
 Type: INTEGER 
 Description: Stores a unique ID for each domain
@@ -172,10 +172,106 @@ Attribute Name: description
 Type: VARCHAR  
 Description: description of each domain is stored
 
+# user_authentication
+Attribute Name: email_id
+Type: VARCHAR 
+Description: usesemail ID for each user to authenticate them into the system
 
+Attribute Name: username
+Type: VARCHAR  
+Description: A unique username for each profile is stored
 
+Attribute Name: password
+Type: VARCHAR  
+Description: A password is set for each users profile 
 
+Attribute Name: user_type
+Type: VARCHAR  
+Description: The type of user i.e, employer or candidate.
 
+# job_posting
+Attribute Name: job_id
+Type: INTEGER 
+Description: Stores a unique ID for each job posted
+
+Attribute Name: title
+Type: VARCHAR  
+Description: A title or a heading for the type of job posting
+
+Attribute Name: job_location
+Type: VARCHAR  
+Description: The location at which the particular job is hosted
+
+Attribute Name: job_description
+Type: VARCHAR  
+Description: Detailed description of the job and its responsibilities
+
+Attribute Name: application_deadline
+Type: DATE  
+Description: The location at which the particular job is hosted
+
+Attribute Name: posting_date
+Type: VARCHAR  
+Description: Date at which the job was posted
+
+# interview_review
+Attribute Name: review_id
+Type: INTEGER 
+Description: Stores a unique ID for each review
+
+Attribute Name: title
+Type: VARCHAR  
+Description: A title or a heading for the type of the review
+
+Attribute Name: posting_date
+Type: DATE  
+Description: Date at which the review was posted
+
+Attribute Name:job_review
+Type: VARCHAR  
+Description: Review of the interview is posted by the candidate 
+
+# application
+Attribute Name: application_id
+Type: INTEGER 
+Description: Stores a unique ID for each review
+
+Attribute Name: application_status
+Type: VARCHAR  
+Description: The current status of the application in the recruitment timeline
+
+# candidate
+Attribute Name: candidate_id
+Type: INTEGER 
+Description: Stores a unique ID for each candidate
+
+Attribute Name: first_name
+Type: VARCHAR  
+Description: The first name of the candidate
+
+Attribute Name: last_name
+Type: VARCHAR  
+Description: The last name of the candidate
+
+Attribute Name: email_id
+Type: VARCHAR  
+Description: user email id to aid with authentication
+
+Attribute Name: phone_number
+Type: INTEGER  
+Description: contact number of the candidate for communication purpose
+
+Attribute Name: experience_year
+Type: INTEGER  
+Description: The years job of experience of the candidate 
+
+Attribute Name: skill
+Type: VARCHAR  
+Description: The specific are of expertise and skills of the candidate
+
+Attribute Name: sustainability_interest
+Type: VARCHAR  
+Description: The type of sustainability that the candidate believes in in-order-to match with prospective jobs
 
 
 
