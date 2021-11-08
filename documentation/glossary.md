@@ -1,6 +1,6 @@
 
 
-## Glossary
+# Glossary
 
 ### Entity Name: employer
 
@@ -108,4 +108,82 @@ employer_id M-1(1)
 title 1-1 (1)
 posting_date 1-1 (0)
 job_review M-1(1)
+
+## Dependency
+Independent entities: domain, employer, candidate
+Dependent entities: user_authentication, job_posting, interview_review, application
+Dependency relationship: employer and candidate logs in via user_authentication
+			 employer posts job_posting
+			 candidate writes interview_review 
+			 candidate fills application
+			 
+## cascade and restrict actions for dependency relationships
+employer and candidate ON DELETE CASCADE user_authentication
+employer ON DELETE CASCADE job_posting
+candidate ON DELETE RESTRICT interview_review 
+candidate ON DELETE CASCADE application
+
+## cascade and restrict rules on foreign keys that implement dependency relationships
+user_id(FK) ->username on delete cascade
+employer_id(FK) ->job_id on delete cascade
+candidate_id(FK) ->review_id on delete cascade
+candidate_id(FK) ->applicant_id on delete cascade
+
+## Implementing attribute types
+# EMPLOYER
+Attribute Name: employer_id
+Type: INTEGER 
+Description: Stores a unique ID for each comapany
+
+Attribute Name: employer_name
+Type: VARCHAR  
+Description: The name of the employer i.e, the company is stored
+
+Attribute Name: employer_headquarters
+Type: VARCHAR  
+Description: The location of the headquarters 
+
+Attribute Name: employer_size
+Type: VARCHAR  
+Description: The size i.e, number of members in the company is the employer_size 
+
+Attribute Name: employer_about
+Type: VARCHAR  
+Description: Details of the company and types of roles they offer
+
+Attribute Name: employer_size
+Type: VARCHAR  
+Description: The size i.e, number of members in the company is the employer_size 
+
+Attribute Name: sustainability_interest
+Type: VARCHAR  
+Description: The type of sustainability that the employer supports and related job prospects
+
+# DOMAIN
+Attribute Name: domain_id
+Type: INTEGER 
+Description: Stores a unique ID for each domain
+
+Attribute Name: name
+Type: VARCHAR  
+Description: The name of the domain 
+
+Attribute Name: description
+Type: VARCHAR  
+Description: description of each domain is stored
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
