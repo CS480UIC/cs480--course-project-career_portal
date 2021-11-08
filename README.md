@@ -55,5 +55,16 @@ A career portal to help companies hire employees for sustainable job roles.
 ![Alt text](/documentation/Screenshots/domain/read.png?raw=true)
 ![Alt text](/documentation/Screenshots/domain/update.png?raw=true)
 
+## CRUD for Interview Review 
+
+![Alt text](/documentation/Screenshots/interview_review/create.png?raw=true)
+![Alt text](/documentation/Screenshots/interview_review/delete.png?raw=true)
+![Alt text](/documentation/Screenshots/interview_review/read.png?raw=true)
+![Alt text](/documentation/Screenshots/interview_review/update.png?raw=true)
+
+## CRUD for User Authentication
+
+![Alt text](/documentation/Screenshots/user_authentication/register.png?raw=true)
+![Alt text](/documentation/Screenshots/user_authentication/login.png?raw=true)
 
 
