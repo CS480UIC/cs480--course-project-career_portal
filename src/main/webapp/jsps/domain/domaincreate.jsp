@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Read Job Posting</title>
+    <title>Domain Create</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,15 +21,18 @@
   </head>
   
   <body>
-  <h1>Read Job Posting</h1>
-<p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/job_postingServletRead'/>" method="post">
-	<input type="hidden" name="method" value="regist"/>
-	job_id    :<input type="text" name="job_id" value="${form.job_id }"/>
-	<span style="color: red; font-weight: 900">${errors.job_id }</span>
+  <h1>Domain Create</h1>
+<form action="<c:url value='/domainServletCreate'/>" method="post">
+	domain_id    :<input type="text" name="domain_id" value="${form.domain_id }"/>
+	<span style="color: red; font-weight: 900">${errors.domain_id }</span>
 	<br/>
-
-	<input type="submit" value="Read Job Posting"/>
+	name    :<input type="text" name="name" value="${form.name }"/>
+	<span style="color: red; font-weight: 900">${errors.name }</span>
+	<br/>
+	description    :<input type="text" name="description" value="${form.description }"/>
+	<span style="color: red; font-weight: 900">${errors.description }</span>
+	<br/>
+	<input type="submit" value="Create Domain"/>
 </form>
   </body>
 </html>

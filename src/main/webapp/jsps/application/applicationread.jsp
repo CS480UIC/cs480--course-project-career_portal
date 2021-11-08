@@ -23,7 +23,7 @@
   <body>
   <h1>Read Application</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/Entity1ServletRead'/>" method="post">
+<form action="<c:url value='/ApplicationServletRead'/>" method="post">
 	<input type="hidden" name="method" value="regist"/>
 	application_id    :<input type="text" name="application_id" value="${form.application_id }"/>
 	<span style="color: red; font-weight: 900">${errors.application_id }</span>
@@ -34,7 +34,7 @@
 	Email	：<input type="text" name="email" value="${form.email }"/>
 	<span style="color: red; font-weight: 900">${errors.email }</span>
 	<br/> --%>
-	<input type="submit" value="Read Entity1"/>
+	<input type="submit" value="Read Application"/>
 </form>
   </body>
 </html>

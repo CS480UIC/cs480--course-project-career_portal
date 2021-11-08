@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Entity1 Create</title>
+    <title>Candidate Create</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -22,7 +22,7 @@
   
   <body>
   <h1>Candidate Create</h1>
-<form action="<c:url value='/CandidateServletCreate'/>" method="post">
+<form action="<c:url value='/candidateServletCreate'/>" method="post">
 	candidate_id    :<input type="text" name="candidate_id" value="${form.candidate_id }"/>
 	<span style="color: red; font-weight: 900">${errors.candidate_id }</span>
 	<br/>
@@ -37,9 +37,6 @@
 	<br/>
 	phone_number	：<input type="text" name="phone_number" value="${form.phone_number }"/>
 	<span style="color: red; font-weight: 900">${errors.phone_number }</span>
-	<br/>
-	resume	：<input type="text" name="resume" value="${form.resume }"/>
-	<span style="color: red; font-weight: 900">${errors.resume }</span>
 	<br/>
 	experience_years	：<input type="text" name="experience_years" value="${form.experience_years }"/>
 	<span style="color: red; font-weight: 900">${errors.experience_years }</span>

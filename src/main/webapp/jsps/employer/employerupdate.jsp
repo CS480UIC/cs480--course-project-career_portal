@@ -24,10 +24,10 @@
   <h1>Update Employer</h1>
 <form action="<c:url value='/employerServletUpdate'/>" method="post">
 	<input type="hidden" name="method" value="search"/>
-	Update employer_id   :<input type="text" name="employer_id" value="${form.employer_id }"/>
+	 Update employer_id   :<input type="text" name="employer_id" value="${form.employer_id }"/>
 	<span style="color: red; font-weight: 900">${errors.employer_id }</span>
 	<br/>
-	<input type="submit" value="Update Entity1"/>
+	<input type="submit" value="Update Employer"/>
 </form>
   </body>
 </html>

@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Read Job Posting</title>
+    <title>Delete Interview Review</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,15 +21,13 @@
   </head>
   
   <body>
-  <h1>Read Job Posting</h1>
-<p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/job_postingServletRead'/>" method="post">
-	<input type="hidden" name="method" value="regist"/>
-	job_id    :<input type="text" name="job_id" value="${form.job_id }"/>
-	<span style="color: red; font-weight: 900">${errors.job_id }</span>
+  <h1>Delete Interview Review</h1>
+<form action="<c:url value='/interview_reviewServletDelete'/>" method="post">
+	<input type="hidden" name="method" value="search"/>
+	Delete Review ID   :<input type="text" name="review_id" value="${form.review_id }"/>
+	<span style="color: red; font-weight: 900">${errors.review_id }</span>
 	<br/>
-
-	<input type="submit" value="Read Job Posting"/>
+	<input type="submit" value="Delete Interview Review"/>
 </form>
   </body>
 </html>

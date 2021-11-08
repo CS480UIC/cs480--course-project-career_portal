@@ -22,7 +22,7 @@
   
   <body>
   <h1>Update</h1>
-<form action="<c:url value='/Entity1ServletUpdate'/>" method="post">
+<form action="<c:url value='/candidateServletUpdate'/>" method="post">
 	<input type="hidden" name="method" value="search"/>
 	Update Candidate   :<input type="text" name="candidate_id" value="${form.candidate_id }"/>
 	<span style="color: red; font-weight: 900">${errors.candidate_id }</span>

@@ -24,7 +24,7 @@
   <h1>Delete Employer</h1>
 <form action="<c:url value='/employerServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="search"/>
-	Delete Employer_ID   :<input type="text" name="username" value="${form.employer_id }"/>
+	Delete Employer_ID   :<input type="text" name="employer_id" value="${form.employer_id }"/>
 	<span style="color: red; font-weight: 900">${errors.employer_id }</span>
 	<br/>
 	<input type="submit" value="Delete Employer"/>

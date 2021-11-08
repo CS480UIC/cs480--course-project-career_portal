@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete Entity1</title>
+    <title>Delete Job Posting</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,8 +21,8 @@
   </head>
   
   <body>
-  <h1>Delete Entity1</h1>
-<form action="<c:url value='/Job_PostingServletDelete'/>" method="post">
+  <h1>Delete Job Posting</h1>
+<form action="<c:url value='/job_postingServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="regist"/>
 	job_id    :<input type="text" name="job_id" value="${form.job_id }"/>
 	<span style="color: red; font-weight: 900">${errors.job_id }</span>

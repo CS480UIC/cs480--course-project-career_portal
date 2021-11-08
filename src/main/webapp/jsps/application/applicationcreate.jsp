@@ -15,6 +15,7 @@
 	<meta http-equiv="description" content="This is my page">
 	<meta http-equiv="content-type" content="text/html;charset=utf-8">
 	<!--
+	add line
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 
@@ -36,7 +37,7 @@
 	<span style="color: red; font-weight: 900">${errors.application_status }</span>
 	<br/>
 	
-	<input type="submit" value="Create Entity1"/>
+	<input type="submit" value="Create Application"/>
 </form>
   </body>
 </html>
