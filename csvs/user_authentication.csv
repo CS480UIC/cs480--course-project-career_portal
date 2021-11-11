@@ -1,0 +1,6 @@
+username,email_id,password,user_type,user_id
+hr1,hr1@amazon.com,amazon_123,employer,100
+hr1_netflix,hr1@netflix.com,netflix_987,employer,101
+hr1_apple,hr1_apple@apple.com,apple_987,employer,102
+michelle_rose,mrose@outlook.com,michelle_123,candidate,103
+john_doe,johndoe@gmail.com,john_987,candidate,104

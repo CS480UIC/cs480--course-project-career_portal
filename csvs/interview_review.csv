@@ -1,0 +1,6 @@
+review_id,employer_id,candidate_id,title,posting_date,review
+100,101,100,R1,2021-06-01,Good review
+101,103,102,R2,2021-10-14,Average
+102,101,103,R3,2021-11-01,Very Good
+103,100,104,R4,2021-11-04,Bad
+104,100,102,R5,2021-11-10,Average
