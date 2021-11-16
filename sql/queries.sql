@@ -83,11 +83,6 @@ VIEW `employees` AS
 
 
 
-
-
-
-
-
 CREATE 
     ALGORITHM = UNDEFINED 
     DEFINER = `root`@`localhost` 
