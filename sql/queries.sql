@@ -1,4 +1,5 @@
-﻿CREATE 
+﻿
+CREATE 
     ALGORITHM = UNDEFINED 
     DEFINER = `root`@`localhost` 
     SQL SECURITY DEFINER
@@ -8,8 +9,7 @@ VIEW `all_domain` AS
         `domain`.`name` AS `name`,
         `domain`.`description` AS `description`
     FROM
-        `domain`
-
+        `domain`;
 
 CREATE 
     ALGORITHM = UNDEFINED 
@@ -25,9 +25,7 @@ VIEW `employer_view` AS
         `employer`.`domain_id` AS `domain_id`,
         `employer`.`sustainability_interest` AS `sustainability_interest`
     FROM
-        `employer`
-
-
+        `employer`;
 
 
 CREATE 
@@ -52,9 +50,7 @@ VIEW `candidate_status` AS
             FROM
                 `application` `a`
             WHERE
-                (`a`.`application_status` = 'Recieved'))
-
-
+                (`a`.`application_status` = 'Recieved'));
 
 
 CREATE 
@@ -67,10 +63,7 @@ VIEW `earliest_deadline` AS
     FROM
         `job_posting`
     WHERE
-        (`job_posting`.`posting_date` > '2020-10-01')
-
-
-
+        (`job_posting`.`posting_date` > '2020-10-01');
 
 
 
@@ -85,7 +78,14 @@ VIEW `employees` AS
         `user_authentication`
     WHERE
         (`user_authentication`.`user_type` = 'employer')
-    ORDER BY `user_authentication`.`user_id`
+    ORDER BY `user_authentication`.`user_id`;
+
+
+
+
+
+
+
 
 
 CREATE 
@@ -101,7 +101,6 @@ VIEW `fall_posting` AS
         (`interview_review`.`posting_date` > '2021-09-30')
     ORDER BY `interview_review`.`posting_date`
 
-
 CREATE 
     ALGORITHM = UNDEFINED 
     DEFINER = `root`@`localhost` 
@@ -112,8 +111,7 @@ VIEW `gen_fullname` AS
                 ' ',
                 `candidate`.`last_name`) AS `Name`
     FROM
-        `candidate`
-
+        `candidate`;
 
 CREATE 
     ALGORITHM = UNDEFINED 
@@ -145,9 +143,7 @@ VIEW `job_employer_info` AS
             FROM
                 `job_posting` `j`
             WHERE
-                (`j`.`title` = 'Senior U X Designer')))
-
-
+                (`j`.`title` = 'Senior U X Designer')));
 
 
 CREATE 
@@ -167,9 +163,7 @@ VIEW `location_not_seattle` AS
         `job_posting`
     WHERE
         (`job_posting`.`job_location` <> 'Seattle')
-    ORDER BY `job_posting`.`application_deadline`
-
-
+    ORDER BY `job_posting`.`application_deadline`;
 
 
 CREATE 
@@ -188,8 +182,7 @@ VIEW `postings_in_seattle` AS
     FROM
         `job_posting`
     GROUP BY `job_posting`.`job_location`
-    HAVING (`job_posting`.`job_location` = 'Seattle')
-
+    HAVING (`job_posting`.`job_location` = 'Seattle');
 
 CREATE 
     ALGORITHM = UNDEFINED 
@@ -201,4 +194,5 @@ VIEW `size_above_500` AS
     FROM
         `employer`
     WHERE
-        (`employer`.`employer_size` > 500)
+        (`employer`.`employer_size` > 500);
+
