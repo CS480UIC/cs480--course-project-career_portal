@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `career_portal` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `career_portal`;
 -- MySQL dump 10.13  Distrib 8.0.26, for macos11 (x86_64)
 --
 -- Host: localhost    Database: career_portal
@@ -18,6 +16,20 @@ USE `career_portal`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Temporary view structure for view `all_domain`
+--
+
+DROP TABLE IF EXISTS `all_domain`;
+/*!50001 DROP VIEW IF EXISTS `all_domain`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `all_domain` AS SELECT 
+ 1 AS `domain_id`,
+ 1 AS `name`,
+ 1 AS `description`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `application`
 --
 
@@ -32,7 +44,9 @@ CREATE TABLE `application` (
   PRIMARY KEY (`applicant_id`),
   KEY `candidate_id_idx` (`candidate_id`),
   KEY `StatusIndex` (`application_status`),
-  CONSTRAINT `candidate_id` FOREIGN KEY (`candidate_id`) REFERENCES `candidate` (`candidate_id`)
+  KEY `job_id_idx` (`job_id`),
+  CONSTRAINT `candidate_id` FOREIGN KEY (`candidate_id`) REFERENCES `candidate` (`candidate_id`),
+  CONSTRAINT `job_id` FOREIGN KEY (`job_id`) REFERENCES `job_posting` (`job_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -165,7 +179,7 @@ CREATE TABLE `employer` (
   UNIQUE KEY `employer_name_UNIQUE` (`employer_name`),
   KEY `domain_id_idx` (`domain_id`),
   KEY `NameIndex` (`employer_name`),
-  CONSTRAINT `domain_id` FOREIGN KEY (`domain_id`) REFERENCES `domain` (`domain_id`) ON DELETE SET NULL
+  CONSTRAINT `domain_id` FOREIGN KEY (`domain_id`) REFERENCES `domain` (`domain_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -178,6 +192,24 @@ LOCK TABLES `employer` WRITE;
 INSERT INTO `employer` VALUES (100,'Amazon','Seattle',10000,'Amazon.com, Inc. is an American multinational technology company which focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence. ',100,'CO2 Reduction'),(101,'Facebook','San Francisco ',50000,'Facebook, Inc. is an American multinational technology company based in Menlo Park, California. It was founded in 2004 as TheFacebook by Mark Zuckerberg, Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes, roommates and students at Harvard College. ',101,'Renewable Energy Transition'),(102,'Apple','Palo Alto',10000,'Apple Inc. is an American multinational technology company that specializes in consumer electronics, computer software, and online services. ',102,'Zero Waste'),(103,'Netflix','Scotts Valley',10000,'Netflix, Inc. is an American pay television over-the-top media service and original programming production company. It offers subscription-based video on demand from a library of films and television series, 40% of which is Netflix original programming produced in-house.',103,'Reduce CO2 Emissions'),(104,'Google','Menlo Park',10000,'Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware',104,'Reduce CO2 emision');
 /*!40000 ALTER TABLE `employer` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `employer_view`
+--
+
+DROP TABLE IF EXISTS `employer_view`;
+/*!50001 DROP VIEW IF EXISTS `employer_view`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `employer_view` AS SELECT 
+ 1 AS `employer_id`,
+ 1 AS `employer_name`,
+ 1 AS `employer_headquarters`,
+ 1 AS `employer_size`,
+ 1 AS `employer_about`,
+ 1 AS `domain_id`,
+ 1 AS `sustainability_interest`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `entity1`
@@ -242,7 +274,9 @@ CREATE TABLE `interview_review` (
   `posting_date` date NOT NULL,
   `review` varchar(200) NOT NULL,
   PRIMARY KEY (`review_id`),
-  KEY `PostingDateIndex` (`posting_date`)
+  KEY `PostingDateIndex` (`posting_date`),
+  KEY `candidate_id_idx` (`candidate_id`),
+  KEY `Employer_id_idx` (`employer_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -403,7 +437,9 @@ CREATE TABLE `user_authentication` (
   `user_type` varchar(45) NOT NULL,
   `user_id` int NOT NULL,
   PRIMARY KEY (`username`),
-  KEY `UserAuthenticationIndex` (`email_id`,`password`,`user_type`)
+  KEY `UserAuthenticationIndex` (`email_id`,`password`,`user_type`),
+  KEY `user_id_idx` (`user_id`),
+  CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `candidate` (`candidate_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -418,31 +454,22 @@ INSERT INTO `user_authentication` VALUES ('hr1','hr1@amazon.com','amazon_123','e
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'career_portal'
+-- Final view structure for view `all_domain`
 --
 
---
--- Dumping routines for database 'career_portal'
---
-/*!50003 DROP PROCEDURE IF EXISTS `disp_employer` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `disp_employer`()
-BEGIN
-    select * from employer;
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50001 DROP VIEW IF EXISTS `all_domain`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `all_domain` AS select `domain`.`domain_id` AS `domain_id`,`domain`.`name` AS `name`,`domain`.`description` AS `description` from `domain` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
 -- Final view structure for view `candidate_status`
@@ -494,6 +521,24 @@ DELIMITER ;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `employees` AS select `user_authentication`.`username` AS `username` from `user_authentication` where (`user_authentication`.`user_type` = 'employer') order by `user_authentication`.`user_id` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `employer_view`
+--
+
+/*!50001 DROP VIEW IF EXISTS `employer_view`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `employer_view` AS select `employer`.`employer_id` AS `employer_id`,`employer`.`employer_name` AS `employer_name`,`employer`.`employer_headquarters` AS `employer_headquarters`,`employer`.`employer_size` AS `employer_size`,`employer`.`employer_about` AS `employer_about`,`employer`.`domain_id` AS `domain_id`,`employer`.`sustainability_interest` AS `sustainability_interest` from `employer` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -633,4 +678,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-11 13:57:21
+-- Dump completed on 2021-11-16 13:11:08
