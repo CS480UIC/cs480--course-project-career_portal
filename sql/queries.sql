@@ -2,6 +2,38 @@
     ALGORITHM = UNDEFINED 
     DEFINER = `root`@`localhost` 
     SQL SECURITY DEFINER
+VIEW `all_domain` AS
+    SELECT 
+        `domain`.`domain_id` AS `domain_id`,
+        `domain`.`name` AS `name`,
+        `domain`.`description` AS `description`
+    FROM
+        `domain`
+
+
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `root`@`localhost` 
+    SQL SECURITY DEFINER
+VIEW `employer_view` AS
+    SELECT 
+        `employer`.`employer_id` AS `employer_id`,
+        `employer`.`employer_name` AS `employer_name`,
+        `employer`.`employer_headquarters` AS `employer_headquarters`,
+        `employer`.`employer_size` AS `employer_size`,
+        `employer`.`employer_about` AS `employer_about`,
+        `employer`.`domain_id` AS `domain_id`,
+        `employer`.`sustainability_interest` AS `sustainability_interest`
+    FROM
+        `employer`
+
+
+
+
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `root`@`localhost` 
+    SQL SECURITY DEFINER
 VIEW `candidate_status` AS
     SELECT 
         `c`.`candidate_id` AS `candidate_id`,
