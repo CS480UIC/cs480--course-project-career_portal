@@ -62,6 +62,7 @@
 			<a href="<c:url value='/jsps/interview_review/interview_reviewread.jsp'/>" target="_parent">Read Interview</a> |&nbsp;
 			<a href="<c:url value='/jsps/interview_review/interview_reviewupdate.jsp'/>" target="_parent">Update Interview</a> |&nbsp;	 
 			<a href="<c:url value='/jsps/interview_review/interview_reviewdelete.jsp'/>" target="_parent">Delete Interview</a>	
+			<a href="<c:url value='/jsps/initialize_db.jsp'/>" target="_parent">Initialize Database</a>
 			
 		</c:when>
 		<c:otherwise>
@@ -71,7 +72,8 @@
 			<a href="<c:url value='/jsps/employer/employercreate.jsp'/>" target="_parent">Create Employer</a> |&nbsp; 
 			<a href="<c:url value='/jsps/employer/employerread.jsp'/>" target="_parent">Read Employer</a> |&nbsp;
 			<a href="<c:url value='/jsps/employer/employerupdate.jsp'/>" target="_parent">Update Employer</a> |&nbsp;	 
-			<a href="<c:url value='/jsps/employer/employerdelete.jsp'/>" target="_parent">Delete Employer</a>	
+			<a href="<c:url value='/jsps/employer/employerdelete.jsp'/>" target="_parent">Delete Employer</a>
+				
 
 		</c:otherwise>
 	</c:choose>
