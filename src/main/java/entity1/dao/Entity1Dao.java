@@ -23,7 +23,7 @@ public class Entity1Dao {
 		Entity1 entity1 = new Entity1();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bookstore","test", "12345678");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/career_portal","root", "Chicago@2021");
 		    String sql = "select * from entity1 where username=?";
 		    PreparedStatement preparestatement = connect.prepareStatement(sql); 
 		    preparestatement.setString(1,username);
@@ -56,7 +56,7 @@ public class Entity1Dao {
 		System.out.println("We are here");
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bookstore","test", "12345678");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/career_portal","root", "Chicago@2021");
 			
 			String sql = "insert into entity1 values(?,?,?)";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
@@ -77,7 +77,7 @@ public class Entity1Dao {
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bookstore","test", "12345678");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/career_portal","root", "Chicago@2021");
 			
 			String sql = "UPDATE entity1 SET password = ?, email = ? where username = ?;";
 			System.out.println("Update Executed");
@@ -97,7 +97,7 @@ public class Entity1Dao {
 		System.out.println("Now going to delete");
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bookstore","test", "12345678");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/career_portal","root", "Chicago@2021");
 			
 			String sql = "delete from entity1 where username = ?";
 			System.out.println(username);
