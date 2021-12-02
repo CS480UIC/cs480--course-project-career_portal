@@ -1,4 +1,4 @@
-package entity1.web.servlet;
+package employer.web.servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,45 +11,43 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity1.dao.Entity1Dao;
-import entity1.domain.Entity1;
-//import entity1.service.Entity1Service;
+import employer.dao.EmployerDao;
+import employer.domain.Employer;
 
 /**
  * Servlet implementation class UserServlet
  */
 
-public class Entity1ServletUpdate extends HttpServlet {
+public class EmployerServletUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Entity1ServletUpdate() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-    
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public EmployerServletUpdate() {
+		super();
+	}
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request,response);
 	}
-	
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String method = request.getParameter("method");
-		Entity1Dao entity1dao = new Entity1Dao();
-		Entity1 entity1 = null;
-		
+		EmployerDao employerdao = new EmployerDao();
+		Employer employer = null;
+
 		if(method.equals("search"))
 		{
 			try {
-				entity1 = Entity1Dao.findByUsername(request.getParameter("username"));
+				employer = employerdao.findByemployer_id(request.getParameter("employer_name"));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -57,40 +55,35 @@ public class Entity1ServletUpdate extends HttpServlet {
 			} catch (IllegalAccessException e1) {
 				e1.printStackTrace();
 			}
-		
-//			Entity1Service entity1service = new Entity1Service();		
-			if(entity1.getUsername()!=null){
-				System.out.println("11");
 
-						System.out.println(entity1);
-						request.setAttribute("entity1", entity1);
-						request.getRequestDispatcher("/jsps/entity1/entity1_update_output.jsp").forward(request, response);
-					
-				}
-				else{
-					
-				request.setAttribute("msg", "Entity not found");
-				request.getRequestDispatcher("/jsps/entity1/entity1_read_output.jsp").forward(request, response);
+			if(employer.getEmployer_name()!=null){
+				request.setAttribute("employer", employer);
+				request.getRequestDispatcher("/jsps/employer/employer_update_output.jsp").forward(request, response);
+
+			}
+			else{
+				request.setAttribute("msg", "Employer not found");
+				request.getRequestDispatcher("/jsps/employer/employer_read_output.jsp").forward(request, response);
 			}
 		}
 		else if(method.equals("update"))
 		{
 			Map<String,String[]> paramMap = request.getParameterMap();
-			Entity1 form = new Entity1();
+		    employer = new Employer();
 			List<String> info = new ArrayList<String>();
 
 			for(String name : paramMap.keySet()) {
-				
 				String[] values = paramMap.get(name);
 				info.add(values[0]);
-				System.out.println(name + ": " + Arrays.toString(values));
 			}
-			form.setPassword(info.get(2));
-			form.setEmail(info.get(3));
-			form.setUsername(request.getParameter("username"));
+			
+			employer.setEmployer_name(info.get(2));
+		
+			
+			employer.setEmployer_name(request.getParameter("employer_name"));
 
 			try {
-				entity1dao.update(form);
+				employerdao.update(employer);
 
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
@@ -99,11 +92,10 @@ public class Entity1ServletUpdate extends HttpServlet {
 			} catch (IllegalAccessException e1) {
 				e1.printStackTrace();
 			}
-			request.setAttribute("msg", "Entity Updated");
-			request.getRequestDispatcher("/jsps/entity1/entity1_read_output.jsp").forward(request, response);
+			
+			request.setAttribute("employer", employer);
+			request.setAttribute("msg", "Employer Info Updated.");
+			request.getRequestDispatcher("/jsps/employer/employer_read_output.jsp").forward(request, response);
 		}
 	}
 }
-
-
-

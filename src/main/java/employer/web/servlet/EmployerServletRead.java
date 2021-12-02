@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import employer.dao.EmployerDao;
 import employer.domain.Employer;
-//import employer.service.EmployerService;
 
 
 /**
@@ -25,7 +24,6 @@ public class EmployerServletRead extends HttpServlet {
      */
     public EmployerServletRead() {
         super();
-        // TODO Auto-generated constructor stub
     }
     
 	/**
@@ -40,8 +38,10 @@ public class EmployerServletRead extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Employer employer = null;
+		EmployerDao employerDao = new EmployerDao();
+		
 		try {
-			employer = EmployerDao.findByemployer_id(request.getParameter("username"));
+			employer = employerDao.findByemployer_id(request.getParameter("employer_id"));
 		} catch (ClassNotFoundException e1) {
 			e1.printStackTrace();
 		} catch (InstantiationException e1) {
@@ -50,18 +50,15 @@ public class EmployerServletRead extends HttpServlet {
 			e1.printStackTrace();
 		}
 		
-		if(employer.getUsername()!=null){
+		if(employer.getEmployer_id()!=null){
 					System.out.println(employer);
 					request.setAttribute("employer", employer);
 					request.getRequestDispatcher("/jsps/employer/employer_read_output.jsp").forward(request, response);
-				
 			}
 			else{
-			request.setAttribute("msg", "Entity not found");
+			request.setAttribute("msg", "Employer not found");
 			request.getRequestDispatcher("/jsps/employer/employer_read_output.jsp").forward(request, response);
 		}
 	}
 }
-
-
 

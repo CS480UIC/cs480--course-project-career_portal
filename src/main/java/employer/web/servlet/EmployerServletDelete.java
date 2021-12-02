@@ -1,23 +1,15 @@
 package employer.web.servlet;
 
 import java.io.IOException;
-//import java.util.ArrayList;
-//import java.util.Arrays;
-//import java.util.HashMap;
-//import java.util.List;
-//import java.util.Map;
-
-//import javax.jws.WebService;
 import javax.servlet.ServletException;
-//import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import employer.dao.EmployerDao;
 import employer.domain.Employer;
-//import employer.service.EmployerException;
-//import employer.service.EmployerService;
+
+
 /**
  * Servlet implementation class UserServlet
  */
@@ -30,8 +22,7 @@ public class EmployerServletDelete extends HttpServlet {
      */
     public EmployerServletDelete() {
         super();
-        // TODO Auto-generated constructor stub
-    }
+		    }
     
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -45,13 +36,12 @@ public class EmployerServletDelete extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String method = request.getParameter("method");
-		EmployerDao employerdao = new EmployerDao();
+		EmployerDao employerDao = new EmployerDao();
 		Employer employer = null;
 		if(method.equals("search"))
 		{
 			try {
-//				employerdao to EmployerDao
-				employer = EmployerDao.findByemployer_id(request.getParameter("employer_id"));
+				employer = employerDao.findByemployer_id(request.getParameter("employer_id"));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -60,22 +50,20 @@ public class EmployerServletDelete extends HttpServlet {
 				e1.printStackTrace();
 			}
 		
-//			EmployerService employerservice = new EmployerService();		
-			if(employer.getUsername()!=null){
+			if(employer.getEmployer_id()!=null){
 						System.out.println(employer);
 						request.setAttribute("employer", employer);
-						request.getRequestDispatcher("/jsps/employer/employer_delete_output.jsp").forward(request, response);
-					
+						request.getRequestDispatcher("/jsps/employer/employerdelete.jsp").forward(request, response);			
 				}
-				else{
-				request.setAttribute("msg", "Entity not found");
-				request.getRequestDispatcher("/jsps/employer/employer_read_output.jsp").forward(request, response);
+			else{
+				request.setAttribute("msg", "Employer not found");
+				request.getRequestDispatcher("/jsps/employer/employerdelete.jsp").forward(request, response);
 			}
 		}
 		else if(method.equals("delete"))
 		{	
 			try {
-				employerdao.delete(request.getParameter("username"));
+				employerDao.delete(request.getParameter("employer_id"));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -83,11 +71,10 @@ public class EmployerServletDelete extends HttpServlet {
 			} catch (IllegalAccessException e1) {
 				e1.printStackTrace();
 			}
-			request.setAttribute("msg", "Entity Deleted");
-			request.getRequestDispatcher("/jsps/employer/employer_read_output.jsp").forward(request, response);
+			
+			request.setAttribute("msg", "Employer Deleted");
+			request.getRequestDispatcher("/jsps/employer_read_output.jsp").forward(request, response);
 		}
 	}
 }
-
-
 
