@@ -23,7 +23,7 @@
   <body>
   <h1>Read Employer</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/employerServletRead'/>" method="post">
+<form action="<c:url value='/EmployerServletRead'/>" method="post">
 	<input type="hidden" name="method" value=""/>
 	employer_id    :<input type="text" name="employer_id" value="${form.employer_id }"/>
 	<span style="color: red; font-weight: 900">${errors.employer_id }</span>

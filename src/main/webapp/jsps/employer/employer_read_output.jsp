@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Read Entity Output</title>
+    <title>Read Employer Output</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,14 +21,22 @@
   </head>
   
   <body>
-  <h1>Read Entity Output</h1>
+  <h1>Read Employer Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form>
-	User    :<input type="text" name="username" value="${entity1.username }" disabled/>
+	employer_id    :<input type="text" name="employer_id" value="${employer.employer_id }" disabled/>
 	<br/>
-	Password：<input type="text" name="password" value="${entity1.password }" disabled/>
+	employer_name：<input type="text" name="employer_name" value="${employer.employer_name }" disabled/>
 	<br/>
-	Email	：<input type="text" name="email" value="${entity1.email }" disabled/>
+	employer_headquarters	：<input type="text" name="employer_headquarters" value="${employer.employer_headquarters }" disabled/>
+	<br/>
+	employer_size	：<input type="text" name="employer_size" value="${employer.employer_size }" disabled/>
+	<br/>
+	employer_about	：<input type="text" name="employer_about" value="${employer.employer_about }" disabled/>
+	<br/>
+	domain_id	：<input type="text" name="domain_id" value="${employer.domain_id }" disabled/>
+	<br/>
+	sustainability_interest	：<input type="text" name="sustainability_interest" value="${employer.sustainability_interest }" disabled/>
 	<br/>
 </form>
 

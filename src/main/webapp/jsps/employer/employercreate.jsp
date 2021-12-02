@@ -22,7 +22,7 @@
   
   <body>
   <h1>Employer Create</h1>
-<form action="<c:url value='/employerServletCreate'/>" method="post">
+<form action="<c:url value='/EmployerServletCreate'/>" method="post">
 	employer_id    :<input type="text" name="employer_id" value="${form.employer_id }"/>
 	<span style="color: red; font-weight: 900">${errors.employer_id }</span>
 	<br/>

@@ -23,17 +23,24 @@
   <body>
   <h1>Delete Entity</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/Entity1ServletDelete'/>" method="post">
+<form action="<c:url value='/EmployerServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="delete"/>
-		<input type="hidden" name="username" value="${entity1.username }"/>
-	User    :<input type="text" name="username" value="${entity1.username }" disabled/>
+		<input type="hidden" name="employer_id" value="${employer.employer_id }"/>
+	employer_id    :<input type="text" name="employer_id" value="${employer.employer_id }" disabled/>
 	<br/>
-	
-	Password：<input type="text" name="password" value="${entity1.password }" disabled/>
+	employer_name    :<input type="text" name="employer_name" value="${employer.employer_name }" disabled/>
 	<br/>
-	Email	：<input type="text" name="email" value="${entity1.email }" disabled/>
+	employer_headquarters    :<input type="text" name="employer_headquarters" value="${employer.employer_headquarters }" disabled/>
 	<br/>
-	<input type="submit" value="Delete Entity1"/>
+	employer_size    :<input type="text" name="employer_size" value="${employer.employer_size }" disabled/>
+	<br/>
+	employer_about    :<input type="text" name="employer_about" value="${employer.employer_about }" disabled/>
+	<br/>
+	domain_id    :<input type="text" name="domain_id" value="${employer.domain_id }" disabled/>
+	<br/>
+	sustainability_interest    :<input type="text" name="sustainability_interest" value="${employer.sustainability_interest }" disabled/>
+	<br/>
+	<input type="submit" value="Delete Employer"/>
 </form>
 
 </body>
