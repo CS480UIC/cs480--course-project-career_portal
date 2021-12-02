@@ -1,6 +1,7 @@
-package entity1.web.servlet;
+package candidate.web.servlet;
 
 import java.io.IOException;
+
 //import java.util.ArrayList;
 //import java.util.Arrays;
 //import java.util.HashMap;
@@ -14,21 +15,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity1.dao.Entity1Dao;
-import entity1.domain.Entity1;
+import candidate.dao.CandidateDao;
+import candidate.domain.Candidate;
 //import entity1.service.Entity1Exception;
 //import entity1.service.Entity1Service;
 /**
  * Servlet implementation class UserServlet
  */
 
-public class Entity1ServletDelete extends HttpServlet {
+public class CandidateServletDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    private static final String Null = null; 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Entity1ServletDelete() {
+    public CandidateServletDelete() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -45,13 +46,15 @@ public class Entity1ServletDelete extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String method = request.getParameter("method");
-		Entity1Dao entity1dao = new Entity1Dao();
-		Entity1 entity1 = null;
+		CandidateDao candidateDao = new CandidateDao();
+		Candidate candidate = null;
 		if(method.equals("search"))
 		{
 			try {
-//				entity1dao to Entity1Dao
-				entity1 = Entity1Dao.findByUsername(request.getParameter("username"));
+//				candidate to Candidate
+				//employer = employerDao.findByemployer_id((request.getParameter("employer_id")));
+
+				candidate = candidateDao.findByCandidate_id(request.getParameter("candidate_id"));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -61,21 +64,21 @@ public class Entity1ServletDelete extends HttpServlet {
 			}
 		
 //			Entity1Service entity1service = new Entity1Service();		
-			if(entity1.getUsername()!=null){
-						System.out.println(entity1);
-						request.setAttribute("entity1", entity1);
-						request.getRequestDispatcher("/jsps/entity1/entity1_delete_output.jsp").forward(request, response);
+			if(candidate.getCandidate_id()!=null){
+						System.out.println(candidate);
+						request.setAttribute("candidate", candidate);
+						request.getRequestDispatcher("/jsps/candidate/candidate_delete_output.jsp").forward(request, response);
 					
 				}
 				else{
-				request.setAttribute("msg", "Entity not found");
-				request.getRequestDispatcher("/jsps/entity1/entity1_read_output.jsp").forward(request, response);
+				request.setAttribute("msg", "Candidate not found");
+				request.getRequestDispatcher("/jsps/candidate/candidate_read_output.jsp").forward(request, response);
 			}
 		}
 		else if(method.equals("delete"))
 		{	
 			try {
-				entity1dao.delete(request.getParameter("username"));
+				candidateDao.delete(request.getParameter("candidate_id"));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -83,11 +86,8 @@ public class Entity1ServletDelete extends HttpServlet {
 			} catch (IllegalAccessException e1) {
 				e1.printStackTrace();
 			}
-			request.setAttribute("msg", "Entity Deleted");
-			request.getRequestDispatcher("/jsps/entity1/entity1_read_output.jsp").forward(request, response);
+			request.setAttribute("msg", "Candidate Deleted");
+			request.getRequestDispatcher("/jsps/candidate/candidate_read_output.jsp").forward(request, response);
 		}
 	}
 }
-
-
-

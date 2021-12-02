@@ -78,9 +78,11 @@ public class EmployerServletUpdate extends HttpServlet {
 			}
 			
 			employer.setEmployer_name(info.get(2));
+			System.out.println(employer.getEmployer_name());
 		
 			
-			employer.setEmployer_name(request.getParameter("employer_name"));
+			employer.setEmployer_id(request.getParameter("employer_id"));
+			System.out.println(employer.getEmployer_id());
 
 			try {
 				employerdao.update(employer);

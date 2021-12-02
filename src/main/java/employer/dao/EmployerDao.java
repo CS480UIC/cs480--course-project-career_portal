@@ -102,8 +102,8 @@ public class EmployerDao {
 			
 			String sql = "UPDATE employer SET employer_name = ? where employer_id = ?;";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
-			preparestatement.setString(1,form.getEmployer_id());
-			preparestatement.setString(2,form.getEmployer_name());
+			preparestatement.setString(1,form.getEmployer_name());
+			preparestatement.setString(2,form.getEmployer_id());
 
 		    preparestatement.executeUpdate();
 		    connect.close();
