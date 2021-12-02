@@ -25,8 +25,8 @@
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/ApplicationServletRead'/>" method="post">
 	<input type="hidden" name="method" value="regist"/>
-	application_id    :<input type="text" name="application_id" value="${form.application_id }"/>
-	<span style="color: red; font-weight: 900">${errors.application_id }</span>
+	applicant_id    :<input type="text" name="applicant_id" value="${form.applicant_id }"/>
+	<span style="color: red; font-weight: 900">${errors.applicant_id }</span>
 	<br/>
 <%-- 	Password：<input type="password" name="password" value="${form.password }"/>
 	<span style="color: red; font-weight: 900">${errors.password }</span>

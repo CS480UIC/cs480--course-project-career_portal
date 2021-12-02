@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete Job Posting</title>
+    <title>Read Entity Output</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,14 +21,19 @@
   </head>
   
   <body>
-  <h1>Delete Job Posting</h1>
-<form action="<c:url value='/Job_postingServletDelete'/>" method="post">
-	<input type="hidden" name="method" value="search"/>
-	job_id    :<input type="text" name="job_id" value="${form.job_id }"/>
-	<span style="color: red; font-weight: 900">${errors.job_id }</span>
+  <h1>Read Entity Output</h1>
+<p style="color: red; font-weight: 900">${msg }</p>
+<form>
+	applicant_id    :<input type="text" name="applicant_id" value="${application.applicant_id }" disabled/>
 	<br/>
-
-	<input type="submit" value="Delete Job Posting"/>
+	candidate_id    ：<input type="text" name="candidate_id" value="${application.candidate_id }" disabled/>
+	<br/>
+	job_id	：<input type="text" name="job_id" value="${application.job_id }" disabled/>
+	<br/>
+	application_status	：<input type="text" name="application_status" value="${application.application_status }" disabled/>
+	<br/>
 </form>
-  </body>
+
+<button onclick="window.location.href='<c:url value='/jsps/main.jsp'/>'">Continue</button>
+</body>
 </html>

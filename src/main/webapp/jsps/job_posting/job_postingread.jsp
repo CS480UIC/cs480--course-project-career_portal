@@ -23,8 +23,8 @@
   <body>
   <h1>Read Job Posting</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/job_postingServletRead'/>" method="post">
-	<input type="hidden" name="method" value="regist"/>
+<form action="<c:url value='/Job_postingServletRead'/>" method="post">
+	<input type="hidden" name="method" value=""/>
 	job_id    :<input type="text" name="job_id" value="${form.job_id }"/>
 	<span style="color: red; font-weight: 900">${errors.job_id }</span>
 	<br/>

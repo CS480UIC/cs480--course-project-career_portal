@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete Entity</title>
+    <title>Delete Job</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,17 +23,26 @@
   <body>
   <h1>Delete Entity</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/Entity1ServletDelete'/>" method="post">
+<form action="<c:url value='/Job_postingServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="delete"/>
-		<input type="hidden" name="username" value="${entity1.username }"/>
-	User    :<input type="text" name="username" value="${entity1.username }" disabled/>
+		<input type="hidden" name="job_id" value="${job_posting.job_id }"/>
+	Job_id   :<input type="text" name="job_id" value="${job_posting.job_id }" disabled/>
+	<br/>
+	Title   :<input type="text" name="title" value="${job_posting.title }" disabled/>
+	<br/>
+	employer_id  :<input type="text" name="employer_id" value="${job_posting.employer_id }" disabled/>
+	<br/>
+		job_location   :<input type="text" name="job_location" value="${job_posting.job_location }" disabled/>
+	<br/>
+		job_description  :<input type="text" name="job_description" value="${job_posting.job_description }" disabled/>
+	<br/>
+		application_deadline   :<input type="text" name="application_deadline" value="${job_posting.application_deadline }" disabled/>
+	<br/>
+		posting_date   :<input type="text" name="posting_date" value="${job_posting.posting_date }" disabled/>
 	<br/>
 	
-	Password：<input type="text" name="password" value="${entity1.password }" disabled/>
-	<br/>
-	Email	：<input type="text" name="email" value="${entity1.email }" disabled/>
-	<br/>
-	<input type="submit" value="Delete Entity1"/>
+	
+	<input type="submit" value="Delete Job posting"/>
 </form>
 
 </body>

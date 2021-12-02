@@ -22,7 +22,7 @@
   
   <body>
   <h1>Candidate Create</h1>
-<form action="<c:url value='/candidateServletCreate'/>" method="post">
+<form action="<c:url value='/CandidateServletCreate'/>" method="post">
 	candidate_id    :<input type="text" name="candidate_id" value="${form.candidate_id }"/>
 	<span style="color: red; font-weight: 900">${errors.candidate_id }</span>
 	<br/>

@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Read Entity Output</title>
+    <title>Read job Output</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,15 +21,22 @@
   </head>
   
   <body>
-  <h1>Read Entity Output</h1>
+  <h1>Read job Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form>
-	User    :<input type="text" name="username" value="${entity1.username }" disabled/>
+	Job_id   :<input type="text" name="username" value="${job_posting.job_id }" disabled/>
 	<br/>
-	Password：<input type="text" name="password" value="${entity1.password }" disabled/>
+	Title   :<input type="text" name="title" value="${job_posting.title }" disabled/>
 	<br/>
-	Email	：<input type="text" name="email" value="${entity1.email }" disabled/>
+	employer_id  :<input type="text" name="employer_id" value="${job_posting.employer_id }" disabled/>
 	<br/>
+		job_location   :<input type="text" name="job_location" value="${job_posting.job_location }" disabled/>
+	<br/>
+		job_description  :<input type="text" name="job_description" value="${job_posting.job_description }" disabled/>
+	<br/>
+		application_deadline   :<input type="text" name="application_deadline" value="${job_posting.application_deadline }" disabled/>
+	<br/>
+		posting_date   :<input type="text" name="posting_date" value="${job_posting.posting_date }" disabled/>
 </form>
 
 <button onclick="window.location.href='<c:url value='/jsps/main.jsp'/>'">Continue</button>

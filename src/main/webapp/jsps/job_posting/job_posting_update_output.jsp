@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete Entity</title>
+    <title>Update Job_posting</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,28 +21,48 @@
   </head>
   
   <body>
-  <h1>Update Entity</h1>
+  <h1>Update Job_posting</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form>
-	User    :<input type="text" name="username1" value="${entity1.username }" disabled/>
+Job_id   :<input type="text" name="username" value="${job_posting.job_id }" disabled/>
 	<br/>
-	
-	Password：<input type="text" name="password1" value="${entity1.password }" disabled />
+	Title   :<input type="text" name="title" value="${job_posting.title }" disabled/>
 	<br/>
-	Email	：<input type="text" name="email1" value="${entity1.email }" disabled/>
+	employer_id  :<input type="text" name="employer_id" value="${job_posting.employer_id }" disabled/>
+	<br/>
+		job_location   :<input type="text" name="job_location" value="${job_posting.job_location }" disabled/>
+	<br/>
+		job_description  :<input type="text" name="job_description" value="${job_posting.job_description }" disabled/>
+	<br/>
+		application_deadline   :<input type="text" name="application_deadline" value="${job_posting.application_deadline }" disabled/>
+	<br/>
+		posting_date   :<input type="text" name="posting_date" value="${job_posting.posting_date }" disabled/>
+
 	<br/>
 </form>
 <h1>Update the values below</h1>
-<form action="<c:url value='/Entity1ServletUpdate'/>" method="post">
+<form action="<c:url value='/Job_postingServletUpdate'/>" method="post">
 		<input type="hidden" name="method" value="update"/>
-				<input type="hidden" name="username" value="${entity1.username }"/>
-	Password：<input type="password" name="password" value="${form.password }"/>
-	<span style="color: red; font-weight: 900">${errors.password }</span>
+				<input type="hidden" name="job_id" value="${job_posting.job_id }"/>
+	Title：<input type="text" name="title" value="${form.title }"/>
+	<span style="color: red; font-weight: 900">${errors.title }</span>
 	<br/>
-	Email	：<input type="text" name="email" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	employer_id	：<input type="text" name="employer_id" value="${form.employer_id }"/>
+	<span style="color: red; font-weight: 900">${errors.employer_id}</span>
 	<br/>
-	<input type="submit" value="Update Entity1"/>
+	job_location	：<input type="text" name="job_location" value="${form.job_location}"/>
+	<span style="color: red; font-weight: 900">${errors.job_location}</span>
+	<br/>
+	job_description	：<input type="text" name="job_description" value="${form.job_description}"/>
+	<span style="color: red; font-weight: 900">${errors.job_description}</span>
+	<br/>
+		application_deadline	：<input type="text" name="application_deadline" value="${form.application_deadline}"/>
+	<span style="color: red; font-weight: 900">${errors.application_deadline}</span>
+	<br/>
+		posting_date	：<input type="text" name="posting_date" value="${form.posting_date}"/>
+	<span style="color: red; font-weight: 900">${errors.posting_date}</span>
+	<br/>
+	<input type="submit" value="Update job"/>
 </form>
 
 </body>

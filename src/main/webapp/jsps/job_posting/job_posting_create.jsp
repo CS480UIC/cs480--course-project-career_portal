@@ -22,7 +22,7 @@
   
   <body>
   <h1>Job Posting Create</h1>
-<form action="<c:url value='/job_postingServletCreate'/>" method="post">
+<form action="<c:url value='/Job_postingServletCreate'/>" method="post">
 	job_id    :<input type="text" name="job_id" value="${form.job_id }"/>
 	<span style="color: red; font-weight: 900">${errors.job_id }</span>
 	<br/>

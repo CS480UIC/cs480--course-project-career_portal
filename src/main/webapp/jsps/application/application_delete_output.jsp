@@ -22,12 +22,21 @@
   
   <body>
   <h1>Delete Application</h1>
+<p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/ApplicationServletDelete'/>" method="post">
-	<input type="hidden" name="method" value="search"/>
-	applicant_id   :<input type="text" name="applicant_id" value="${form.applicant_id }"/>
-	<span style="color: red; font-weight: 900">${errors.applicant_id }</span>
+	<input type="hidden" name="method" value="delete"/>
+		<input type="hidden" name="applicant_id" value="${application.applicant_id }"/>
+	applicant_id    :<input type="text" name="applicant_id" value="${application.applicant_id }" disabled/>
+	<br/>
+	
+	candidate_id：<input type="text" name="candidate_id" value="${application.candidate_id }" disabled/>
+	<br/>
+	job_id	：<input type="text" name="job_id" value="${application.job_id }" disabled/>
+	<br/>
+	application_status	：<input type="text" name="application_status" value="${application.application_status }" disabled/>
 	<br/>
 	<input type="submit" value="Delete Application"/>
 </form>
-  </body>
+
+</body>
 </html>

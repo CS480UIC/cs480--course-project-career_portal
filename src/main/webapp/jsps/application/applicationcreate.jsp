@@ -23,12 +23,12 @@
   
   <body>
   <h1>Application Create</h1>
-<form action="<c:url value='/applicationServletCreate'/>" method="post">
-	application_id    :<input type="text" name="application_id" value="${form.application_id }"/>
-	<span style="color: red; font-weight: 900">${errors.application_id }</span>
-	<br/>
+<form action="<c:url value='/ApplicationServletCreate'/>" method="post">
 	applicant_id    :<input type="text" name="applicant_id" value="${form.applicant_id }"/>
 	<span style="color: red; font-weight: 900">${errors.applicant_id }</span>
+	<br/>
+	candidate_id    :<input type="text" name="candidate_id" value="${form.candidate_id }"/>
+	<span style="color: red; font-weight: 900">${errors.candidate_id }</span>
 	<br/>
 	job_id    :<input type="text" name="job_id" value="${form.job_id }"/>
 	<span style="color: red; font-weight: 900">${errors.job_id }</span>
