@@ -47,7 +47,7 @@ public class EmployerServletUpdate extends HttpServlet {
 		if(method.equals("search"))
 		{
 			try {
-				employer = employerdao.findByemployer_id(request.getParameter("employer_name"));
+				employer = employerdao.findByemployer_id(request.getParameter("employer_id"));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -56,7 +56,7 @@ public class EmployerServletUpdate extends HttpServlet {
 				e1.printStackTrace();
 			}
 
-			if(employer.getEmployer_name()!=null){
+			if(employer.getEmployer_id()!=null){
 				request.setAttribute("employer", employer);
 				request.getRequestDispatcher("/jsps/employer/employer_update_output.jsp").forward(request, response);
 

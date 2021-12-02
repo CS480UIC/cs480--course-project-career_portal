@@ -1,3 +1,5 @@
+
+   
 package employer.web.servlet;
 
 import java.io.IOException;
@@ -16,13 +18,14 @@ import employer.domain.Employer;
 
 public class EmployerServletDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final String Null = null;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public EmployerServletDelete() {
         super();
-		    }
+    }
     
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,7 +44,7 @@ public class EmployerServletDelete extends HttpServlet {
 		if(method.equals("search"))
 		{
 			try {
-				employer = employerDao.findByemployer_id(request.getParameter("employer_id"));
+				employer = employerDao.findByemployer_id((request.getParameter("employer_id")));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -53,11 +56,11 @@ public class EmployerServletDelete extends HttpServlet {
 			if(employer.getEmployer_id()!=null){
 						System.out.println(employer);
 						request.setAttribute("employer", employer);
-						request.getRequestDispatcher("/jsps/employer/employerdelete.jsp").forward(request, response);			
+						request.getRequestDispatcher("/jsps/employer/employer_delete_output.jsp").forward(request, response);			
 				}
-			else{
+				else{
 				request.setAttribute("msg", "Employer not found");
-				request.getRequestDispatcher("/jsps/employer/employerdelete.jsp").forward(request, response);
+				request.getRequestDispatcher("/jsps/employer/employer_read_output.jsp").forward(request, response);
 			}
 		}
 		else if(method.equals("delete"))
@@ -71,9 +74,8 @@ public class EmployerServletDelete extends HttpServlet {
 			} catch (IllegalAccessException e1) {
 				e1.printStackTrace();
 			}
-			
 			request.setAttribute("msg", "Employer Deleted");
-			request.getRequestDispatcher("/jsps/employer_read_output.jsp").forward(request, response);
+			request.getRequestDispatcher("/jsps/employer/employer_read_output.jsp").forward(request, response);
 		}
 	}
 }

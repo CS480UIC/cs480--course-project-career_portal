@@ -50,7 +50,7 @@ public class EmployerServletRead extends HttpServlet {
 			e1.printStackTrace();
 		}
 		
-		if(employer.getEmployer_id()!=null){
+		if(employer.getEmployer_name()!=null){
 					System.out.println(employer);
 					request.setAttribute("employer", employer);
 					request.getRequestDispatcher("/jsps/employer/employer_read_output.jsp").forward(request, response);
