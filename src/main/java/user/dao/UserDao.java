@@ -26,7 +26,7 @@ public class UserDao {
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/career_portal","career-portal-user", "alpha@2021");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/career_portal","root", "Chicago@2021");
 		    String sql = "select * from user where username=?";
 		    PreparedStatement preparestatement = connect.prepareStatement(sql); 
 		    preparestatement.setString(1,username);
@@ -39,7 +39,7 @@ public class UserDao {
 		    		user.setPassword(resultSet.getString("password"));
 		    		user.setEmail(resultSet.getString("email"));
 		    		
-		    	}
+		    	} 
 		    }
 		
 		    connect.close();
@@ -58,7 +58,7 @@ public class UserDao {
 	public void add(User user) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/career_portal","career-portal-user ", "alpha@2021");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/career_portal","root", "Chicago@2021");
 			
 			String sql = "insert into user values(?,?,?)";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
@@ -77,7 +77,7 @@ public class UserDao {
 		List<Object> list = new ArrayList<>();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/career_portal","career-portal-user", "alpha@2021");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/career_portal","root", "Chicago@2021");
 			String sql = "select * from user";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
 			ResultSet resultSet = preparestatement.executeQuery();			
