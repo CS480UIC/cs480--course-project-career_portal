@@ -77,7 +77,7 @@ public class EmployerServletUpdate extends HttpServlet {
 				info.add(values[0]);
 			}
 			
-			employer.setEmployer_name(info.get(2));
+			employer.setEmployer_name(info.get(1));
 			System.out.println(employer.getEmployer_name());
 		
 			
