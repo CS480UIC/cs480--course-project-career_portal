@@ -29,8 +29,8 @@
 	<br/>
 	<%-- <input type="hidden" name="method" value="search"/>
 	 Update employer_name   :<input type="text" name="employer_name" value="${form.employer_name }"/>
-	<span style="color: red; font-weight: 900">${errors.employer_name }</span>
-	<input type="submit" value="Update Employer"/> --%>
+	<span style="color: red; font-weight: 900">${errors.employer_name }</span> --%>
+	<input type="submit" value="Update Employer"/> 
 </form>
   </body>
 </html>

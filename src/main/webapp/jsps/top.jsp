@@ -51,10 +51,10 @@
 			<a href="<c:url value='/jsps/job_posting/job_postingread.jsp'/>" target="_parent">Read Job Posting</a> |&nbsp;
 			<a href="<c:url value='/jsps/job_posting/job_postingupdate.jsp'/>" target="_parent">Update Job Posting</a> |&nbsp;	 
 			<a href="<c:url value='/jsps/job_posting/job_postingdelete.jsp'/>" target="_parent">Delete  Job Posting</a>	
-			<a href="<c:url value='/jsps/domain/domaincreate.jsp'/>" target="_parent">Create Domain</a> |&nbsp; 
+			<%-- <a href="<c:url value='/jsps/domain/domaincreate.jsp'/>" target="_parent">Create Domain</a> |&nbsp; 
 			<a href="<c:url value='/jsps/domain/domainread.jsp'/>" target="_parent">Read Domain</a> |&nbsp;
 			<a href="<c:url value='/jsps/domain/domainupdate.jsp'/>" target="_parent">Update Domain</a> |&nbsp;	 
-			<a href="<c:url value='/jsps/domain/domaindelete.jsp'/>" target="_parent">Delete Domain</a>	
+			<a href="<c:url value='/jsps/domain/domaindelete.jsp'/>" target="_parent">Delete Domain</a>	 --%>
 			<a href="<c:url value='/jsps/application/applicationcreate.jsp'/>" target="_parent">Create Application</a> |&nbsp; 
 			<a href="<c:url value='/jsps/application/applicationread.jsp'/>" target="_parent">Read Application</a> |&nbsp;
 			<a href="<c:url value='/jsps/application/applicationupdate.jsp'/>" target="_parent">Update Application</a> |&nbsp;	 
@@ -82,10 +82,10 @@
 			<a href="<c:url value='/jsps/job_posting/job_postingread.jsp'/>" target="_parent">Read Job Posting</a> |&nbsp;
 			<a href="<c:url value='/jsps/job_posting/job_postingupdate.jsp'/>" target="_parent">Update Job Posting</a> |&nbsp;	 
 			<a href="<c:url value='/jsps/job_posting/job_postingdelete.jsp'/>" target="_parent">Delete  Job Posting</a>	
-			<a href="<c:url value='/jsps/domain/domaincreate.jsp'/>" target="_parent">Create Domain</a> |&nbsp; 
+			<%-- <a href="<c:url value='/jsps/domain/domaincreate.jsp'/>" target="_parent">Create Domain</a> |&nbsp; 
 			<a href="<c:url value='/jsps/domain/domainread.jsp'/>" target="_parent">Read Domain</a> |&nbsp;
 			<a href="<c:url value='/jsps/domain/domainupdate.jsp'/>" target="_parent">Update Domain</a> |&nbsp;	 
-			<a href="<c:url value='/jsps/domain/domaindelete.jsp'/>" target="_parent">Delete Domain</a>	
+			<a href="<c:url value='/jsps/domain/domaindelete.jsp'/>" target="_parent">Delete Domain</a>	 --%>
 			<a href="<c:url value='/jsps/application/applicationcreate.jsp'/>" target="_parent">Create Application</a> |&nbsp; 
 			<a href="<c:url value='/jsps/application/applicationread.jsp'/>" target="_parent">Read Application</a> |&nbsp;
 			<a href="<c:url value='/jsps/application/applicationupdate.jsp'/>" target="_parent">Update Application</a> |&nbsp;	 
