@@ -1,8 +1,8 @@
-package employer.web.servlet;
+package domain.web.servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.List;
 import java.util.Map;
 
@@ -11,20 +11,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import employer.dao.EmployerDao;
-import employer.domain.Employer;
+import domain.dao.DomainDao;
+import domain.domain.Domain;
 
 /**
  * Servlet implementation class UserServlet
  */
 
-public class EmployerServletUpdate extends HttpServlet {
+public class DomainServletUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public EmployerServletUpdate() {
+	public DomainServletUpdate() {
 		super();
 	}
 
@@ -41,13 +41,13 @@ public class EmployerServletUpdate extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String method = request.getParameter("method");
-		EmployerDao employerdao = new EmployerDao();
-		Employer employer = null;
+		DomainDao domaindao = new DomainDao();
+		Domain domain = null;
 
 		if(method.equals("search"))
 		{
 			try {
-				employer = employerdao.findByemployer_id(request.getParameter("employer_id"));
+				domain = domaindao.findByDomain_id(request.getParameter("domain_id"));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -56,20 +56,20 @@ public class EmployerServletUpdate extends HttpServlet {
 				e1.printStackTrace();
 			}
 
-			if(employer.getEmployer_id()!=null){
-				request.setAttribute("employer", employer);
-				request.getRequestDispatcher("/jsps/employer/employer_update_output.jsp").forward(request, response);
+			if(domain.getDomain_id()!=null){
+				request.setAttribute("domain", domain);
+				request.getRequestDispatcher("/jsps/domain/domain_update_output.jsp").forward(request, response);
 
 			}
 			else{
-				request.setAttribute("msg", "Employer not found");
-				request.getRequestDispatcher("/jsps/employer/employer_read_output.jsp").forward(request, response);
+				request.setAttribute("msg", "Domain not found");
+				request.getRequestDispatcher("/jsps/domain/domain_read_output.jsp").forward(request, response);
 			}
 		}
 		else if(method.equals("update"))
 		{
 			Map<String,String[]> paramMap = request.getParameterMap();
-		    employer = new Employer();
+		    domain = new Domain();
 			List<String> info = new ArrayList<String>();
 
 			for(String name : paramMap.keySet()) {
@@ -77,15 +77,15 @@ public class EmployerServletUpdate extends HttpServlet {
 				info.add(values[0]);
 			}
 			
-			employer.setEmployer_name(info.get(2));
-			System.out.println(employer.getEmployer_name());
+			domain.setName(info.get(1));
+			System.out.println(domain.getName());
 		
 			
-			employer.setEmployer_id(request.getParameter("employer_id"));
-			System.out.println(employer.getEmployer_id());
+			domain.setDomain_id(request.getParameter("domain_id"));
+			System.out.println(domain.getDomain_id());
 
 			try {
-				employerdao.update(employer);
+				domaindao.update(domain);
 
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
@@ -95,9 +95,9 @@ public class EmployerServletUpdate extends HttpServlet {
 				e1.printStackTrace();
 			}
 			
-			request.setAttribute("employer", employer);
-			request.setAttribute("msg", "Employer Info Updated.");
-			request.getRequestDispatcher("/jsps/employer/employer_read_output.jsp").forward(request, response);
+			request.setAttribute("domain", domain);
+			request.setAttribute("msg", "Domain Info Updated.");
+			request.getRequestDispatcher("/jsps/domain/domain_read_output.jsp").forward(request, response);
 		}
 	}
 }
