@@ -22,7 +22,7 @@
   
   <body>
   <h1>Domain Create</h1>
-<form action="<c:url value='/domainServletCreate'/>" method="post">
+<form action="<c:url value='/DomainServletCreate'/>" method="post">
 	domain_id    :<input type="text" name="domain_id" value="${form.domain_id }"/>
 	<span style="color: red; font-weight: 900">${errors.domain_id }</span>
 	<br/>

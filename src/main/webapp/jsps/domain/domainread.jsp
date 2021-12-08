@@ -23,7 +23,7 @@
   <body>
   <h1>Read Domain</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/domainServletRead'/>" method="post">
+<form action="<c:url value='/DomainServletRead'/>" method="post">
 	<input type="hidden" name="method" value=""/>
 	domain_id    :<input type="text" name="domain_id" value="${form.domain_id }"/>
 	<span style="color: red; font-weight: 900">${errors.domain_id }</span>

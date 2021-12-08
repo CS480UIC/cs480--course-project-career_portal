@@ -22,9 +22,9 @@
   
   <body>
   <h1>Update Domain</h1>
-<form action="<c:url value='/domainServletUpdate'/>" method="post">
+<form action="<c:url value='/DomainServletUpdate'/>" method="post">
 	<input type="hidden" name="method" value="search"/>
-	Update domain_id   :<input type="text" name="domain_id" value="${form.domain_id }"/>
+	Update Domain   :<input type="text" name="domain_id" value="${form.domain_id }"/>
 	<span style="color: red; font-weight: 900">${errors.domain_id }</span>
 	<br/>
 	<input type="submit" value="Update Domain"/>

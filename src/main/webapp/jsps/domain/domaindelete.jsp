@@ -22,7 +22,7 @@
   
   <body>
   <h1>Delete Domain</h1>
-<form action="<c:url value='/domainServletDelete'/>" method="post">
+<form action="<c:url value='/DomainServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="search"/>
 	Delete domain_id   :<input type="text" name="domain_id" value="${form.domain_id }"/>
 	<span style="color: red; font-weight: 900">${errors.domain_id }</span>

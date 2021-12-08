@@ -23,15 +23,15 @@
   <body>
   <h1>Delete Entity</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/Entity1ServletDelete'/>" method="post">
+<form action="<c:url value='/DomainServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="delete"/>
-		<input type="hidden" name="username" value="${entity1.username }"/>
-	User    :<input type="text" name="username" value="${entity1.username }" disabled/>
+		<input type="hidden" name="domain_id" value="${domain.domain_id }"/>
+	Domain_id    :<input type="text" name="domain_id" value="${domain.domain_id }" disabled/>
 	<br/>
 	
-	Password：<input type="text" name="password" value="${entity1.password }" disabled/>
+	Name：<input type="text" name="name" value="${domain.name }" disabled/>
 	<br/>
-	Email	：<input type="text" name="email" value="${entity1.email }" disabled/>
+	Description	：<input type="text" name="description" value="${domain.description }" disabled/>
 	<br/>
 	<input type="submit" value="Delete Entity1"/>
 </form>
