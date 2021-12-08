@@ -76,7 +76,7 @@ public class ApplicationServletUpdate extends HttpServlet {
 				info.add(values[0]);
 			}
 			
-			application.setApplicant_id(info.get(2));
+			application.setApplicant_id(info.get(1));
 		
 			
 			application.setApplication_status(request.getParameter("application_status"));
