@@ -21,7 +21,7 @@
   </head>
   
   <body>
-  <h1>Read Entity Output</h1>
+  <h1>Read Candidate Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form>
     candidate_id    :<input type="text" name="employer_id" value="${candidate.candidate_id }" disabled/>
