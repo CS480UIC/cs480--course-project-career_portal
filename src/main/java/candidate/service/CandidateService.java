@@ -24,7 +24,7 @@ public class CandidateService {
 		// check the primary key of Entity1
 		Candidate candidate=  candidateDao.findByCandidate_id(form.getCandidate_id());
 		if(candidate.getCandidate_id()!=null && candidate.getCandidate_id().equals(form.getCandidate_id())) throw new CandidateException("This user name has been registered!");
-		candidateDao.createCandidate(form);
+		candidateDao.add(form);
 	}
 	/**
 	 * Login function

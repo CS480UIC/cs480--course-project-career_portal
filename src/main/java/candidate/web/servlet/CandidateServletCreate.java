@@ -1,5 +1,6 @@
 package candidate.web.servlet;
 
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 import candidate.domain.Candidate;
 import candidate.service.CandidateException;
@@ -28,7 +30,6 @@ public class CandidateServletCreate extends HttpServlet {
      */
     public CandidateServletCreate() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -46,55 +47,29 @@ public class CandidateServletCreate extends HttpServlet {
 		Map<String,String[]> paramMap = request.getParameterMap();
 		Candidate form = new Candidate();
 		List<String> info = new ArrayList<String>();
-		System.out.println(form);
+
 		for(String name : paramMap.keySet()) {
-			
 			String[] values = paramMap.get(name);
 			info.add(values[0]);
-			System.out.println(name + ": " + Arrays.toString(values));
-			System.out.println(info.add(values[0]));
-
 		}
-//		System.out.println("1");
-//		System.out.println(info);
-
-		form.setCandidate_id(info.get(1));
-//		System.out.println("1");
-
-		form.setFirst_name(info.get(2));
-//		System.out.println("2");
-
-		form.setLast_name(info.get(3));		
-//		System.out.println("3");
-		
-		form.setEmail_id(info.get(4));		
-//		System.out.println("3");
-		
-		form.setPhone_no(info.get(5));		
-//		System.out.println("3");
-		
-		form.setExperience_year(info.get(6));		
-//		System.out.println("3");
-		
-		form.setSkill(info.get(7));		
-//		System.out.println("3");
-		
-		form.setSustainability_interest(info.get(8));		
-//		System.out.println("3");
+		form.setCandidate_id(info.get(0));
+		form.setFirst_name(info.get(1));
+		form.setLast_name(info.get(2));
+		form.setEmail_id(info.get(3));	
+		form.setPhone_no(info.get(4));	
+		form.setExperience_year(info.get(5));	
+		form.setSkill(info.get(6));	
+		form.setSustainability_interest(info.get(7));	
 		
 		try {
-			System.out.println("3");
 			candidateservice.create(form);
 			response.sendRedirect( request.getContextPath() + "/jsps/main.jsp");
 			
 		} catch (ClassNotFoundException | CandidateException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 		
