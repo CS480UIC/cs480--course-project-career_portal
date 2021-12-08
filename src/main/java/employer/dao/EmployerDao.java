@@ -27,7 +27,7 @@ public class EmployerDao {
 	/**
 	 * password of your employer_name to connect to the database
 	 */
-	private String MySQL_password = "Chicago123"; //TODO change password
+	private String MySQL_password = "Chicago@2021"; //TODO change password
 
 	public Employer findByemployer_id(String employer_id) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		Employer employer = new Employer();
