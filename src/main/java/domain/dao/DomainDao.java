@@ -102,9 +102,12 @@ public class DomainDao {
 			
 			String sql = "UPDATE domain SET name = ? where domain_id = ?;";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
-		    preparestatement.setString(1,form.getDomain_id());
-			preparestatement.setString(2,form.getName());
-		    preparestatement.setString(3,form.getDescription());
+		    //preparestatement.setString(1,form.getDomain_id());
+			preparestatement.setString(1,form.getName());
+			preparestatement.setString(2,form.getDomain_id());
+		    //preparestatement.setString(3,form.getDescription());
+		    
+		    
 		   
 		    preparestatement.executeUpdate();
 		    connect.close();

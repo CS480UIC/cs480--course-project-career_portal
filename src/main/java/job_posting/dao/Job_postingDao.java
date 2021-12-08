@@ -28,7 +28,7 @@ public class Job_postingDao {
 	/**
 	 * password of your job _name to connect to the database
 	 */
-	private String MySQL_password = "Chicago@2021"; //TODO change password
+	private String MySQL_password = "Chicago123"; //TODO change password
 
 	public Job_posting findByjob_id(String job_id) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		Job_posting job_posting = new Job_posting();

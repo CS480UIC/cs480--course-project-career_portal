@@ -16,7 +16,6 @@ import domain.domain.Domain;
 
 public class DomainServletDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -53,7 +52,7 @@ public class DomainServletDelete extends HttpServlet {
 		
 			if(domain.getDomain_id()!=null){
 						System.out.println(domain);
-						request.setAttribute("employer", domain);
+						request.setAttribute("domain", domain);
 						request.getRequestDispatcher("/jsps/domain/domain_delete_output.jsp").forward(request, response);			
 				}
 				else{
